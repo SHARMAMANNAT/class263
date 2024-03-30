@@ -12,7 +12,7 @@ def maths_operations():
     equation = request.form['text']
     operation = request.form['operation']
 
-    result = 'https://newton.now.sh/api/v2//'+operation+'/' + equation
+    result= 'https://newton.now.sh/api/v2//'+operation+'/' + equation
 
     data = requests.get(result).json()
 
@@ -21,4 +21,4 @@ def maths_operations():
     return render_template("index.html", result=answer , equation=equation)
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)
